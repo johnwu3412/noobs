@@ -1,9 +1,12 @@
 import requests
 import json
 
-url = 'https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/Jack%20J'
+base_url = 'https://na1.api.riotgames.com/'
+api_endpoint = 'lol/summoner/v4/summoners/by-name/'
 key = 'RGAPI-16399abc-5203-46b0-a907-ec20409bba6b'
 
-get_summoner = url + '?api_key=' + key
-print(get_summoner)
+summoner_name =  input("Enter your summoner name: ")
+
+get_summoner = base_url + api_endpoint + summoner_name + '?api_key=' + key
 print(requests.get(get_summoner).text)
+ 
