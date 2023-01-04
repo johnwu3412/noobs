@@ -10,7 +10,8 @@ class RiotClient():
         response = requests.get(self.base_url + 'lol/summoner/v4/summoners/by-name/' + name + '?api_key=' + self.key)
         if (response.status_code > 299 and response.status_code < 200):
             raise Exception("Oops: " + response)
-        print(response.text)
         summoner = json.loads(response.text)
         return summoner['id']
 
+    def get_masteries_by_summoner():
+        return ""
