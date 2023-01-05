@@ -23,4 +23,4 @@ get_mastery = base_url + get_champion_mastery_endpoint + summoner["id"] + '?api_
 #sending request and reformatting request -> todo: need to add error cases
 mastery = json.loads(requests.get(get_mastery).text)
 
-#print(mastery)
+print(mastery)
