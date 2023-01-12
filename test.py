@@ -23,4 +23,12 @@ get_mastery = base_url + get_champion_mastery_endpoint + summoner["id"] + '?api_
 #sending request and reformatting request -> todo: need to add error cases
 mastery = json.loads(requests.get(get_mastery).text)
 
+#convert champion.txt to a dictionary where key is id and value is name (Ivan)
+champ = {}
+
+with open("champions.txt", "r", encoding = "utf-8") as f:
+    for line in f:
+        key,value = line.strip().split(":")
+        champ[key]= value.strip()
+
 print(mastery)
