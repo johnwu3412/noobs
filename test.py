@@ -25,11 +25,9 @@ mastery = json.loads(requests.get(get_mastery).text)
 
 #convert champion.txt to a dictionary where key is id and value is name (Ivan)
 champ = {}
-x = ""
 
 with open("champions.txt", "r", encoding = "utf-8") as f:
     for line in f:
-        x = line
         key,value = line.strip().split(":")
         champ[key]= value.strip()
 
