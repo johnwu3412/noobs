@@ -5,6 +5,13 @@ class RiotClient():
     def __init__(self, base_url, key):
         self.base_url = base_url
         self.key = key
+        self.champ = {}
+        
+        with open("champions.txt", "r", encoding = "utf-8") as f:
+            for line in f:
+                key,value = line.strip().split(":")
+                self.champ[key]= value.strip()
+
 
     def get_summoner_by_name(self, name):
         response = requests.get(self.base_url + 'lol/summoner/v4/summoners/by-name/' + name + '?api_key=' + self.key)
@@ -15,3 +22,7 @@ class RiotClient():
 
     def get_masteries_by_summoner():
         return ""
+    
+    def champ_id_to_name(self, champ_id):
+        return(self.champ[champ_id])        
+        
