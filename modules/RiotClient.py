@@ -20,8 +20,14 @@ class RiotClient():
         summoner = json.loads(response.text)
         return summoner['id']
 
-    def get_masteries_by_summoner():
-        return ""
+    def get_masteries_by_summoner(self, summonerid):
+        get_champion_mastery_endpoint = 'lol/champion-mastery/v4/champion-masteries/by-summoner/'
+        get_mastery = self.base_url + get_champion_mastery_endpoint + summonerid + '?api_key=' + self.key
+
+        #sending request and reformatting request -> todo: need to add error cases
+        mastery = json.loads(requests.get(get_mastery).text)
+
+        return(mastery)
     
     def champ_id_to_name(self, champ_id):
         return(self.champ[champ_id])        
