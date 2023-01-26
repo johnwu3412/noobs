@@ -2,7 +2,9 @@
 from flask import Flask, redirect, url_for
 import sys
 import os
-sys.path.insert(0, r'C:\Users\Charlie\Desktop\Coding Stuff\noobs')
+
+
+sys.path.insert(0, os.getcwd()+"\..")
 from modules.RiotClient import RiotClient
 
 app = Flask(__name__)
