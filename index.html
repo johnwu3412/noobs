@@ -1,17 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+<html>
+  <head>
+    <title>Summoner Champion Mastery</title>
+  </head>
+  <body>
+    <button id="getButton">Get Champions</button>
+    <div id="displayData"></div>
     
-    <div>
-        <button>Get</button>
-        <div id="table"></div>
-    </div>
-    <script src="getData.js"></script>
-</body>
+    <script>
+      document.getElementById("getButton").addEventListener("click", function() {
+        document.getElementById("displayData").innerHTML = `
+          <p>Summoner Name: Summoner</p>
+          <table>
+            <tr>
+              <th>Champion</th>
+              <th>Mastery</th>
+            </tr>
+            <tr>
+              <td>Ahri</td>
+              <td>7</td>
+            </tr>
+            <tr>
+              <td>Zed</td>
+              <td>6</td>
+            </tr>
+            <tr>
+              <td>Ekko</td>
+              <td>5</td>
+            </tr>
+            <tr>
+              <td>Katarina</td>
+              <td>5</td>
+            </tr>
+            <tr>
+              <td>Annie</td>
+              <td>4</td>
+            </tr>
+          </table>
+        `;
+      });
+    </script>
+  </body>
 </html>

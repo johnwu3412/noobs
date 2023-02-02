@@ -35,31 +35,39 @@ getBtn.addEventListener('click', getData);
 postBtn.addEventListener('click', sendData);
 */
 
-let btnGet = document.querySelector('button');
-let myTable = document.querySelector('#table');
-let summonerInformation = [
+<button id="getButton">Get Champions</button>
+<div id="displayData"></div>
 
-]
-let headers = ['Champion', 'Mastery'];
-btnGet.addEventListener('click', () => {
-    let table = document.createElement('table');
-    let headerRow = document.createElement('tr');
-    headers.forEach(headerText => {
-        let header = document.createElement('th');
-        let textNode = document.createTextNode(headerText);
-        header.appendChild(textNode);
-        headerRow.appendChild(header);
-    });
-    table.appendChild(headerRow);
-    summonerInformation.forEach(emp => {
-        let row = document.createElement('tr');
-        Object.values(emp).forEach(text => {
-            let cell = document.createElement('td');
-            let textNode = document.createTextNode(text);
-            cell.appendChild(textNode);
-            row.appendChild(cell);
-        })
-        table.appendChild(row);
-    });
-    myTable.appendChild(table);
-});
+<script>
+  document.getElementById("getButton").addEventListener("click", function() {
+    document.getElementById("displayData").innerHTML = `
+      <p>Summoner Name: Summoner</p>
+      <table>
+        <tr>
+          <th>Champion</th>
+          <th>Mastery</th>
+        </tr>
+        <tr>
+          <td>Ahri</td>
+          <td>7</td>
+        </tr>
+        <tr>
+          <td>Zed</td>
+          <td>6</td>
+        </tr>
+        <tr>
+          <td>Ekko</td>
+          <td>5</td>
+        </tr>
+        <tr>
+          <td>Katarina</td>
+          <td>5</td>
+        </tr>
+        <tr>
+          <td>Annie</td>
+          <td>4</td>
+        </tr>
+      </table>
+    `;
+  });
+</script>
