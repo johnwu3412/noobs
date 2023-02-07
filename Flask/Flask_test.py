@@ -13,6 +13,8 @@ app = Flask(__name__)
 rc = RiotClient("https://na1.api.riotgames.com/",os.getenv("RiotGamesKey"))
 summonerID = rc.get_summoner_by_name("ShabobNiqqua")
 
+requests = [""]
+
 #           ***Processing***
 @app.route("/")
 def home():
@@ -28,3 +30,4 @@ def user(name):
 
 if __name__ == "__main__":
     app.run()
+
