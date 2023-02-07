@@ -3,14 +3,14 @@ from flask import Flask, redirect, url_for
 import sys
 import os
 
-
-sys.path.insert(0, os.getcwd()+"\..")
-from modules.RiotClient import RiotClient
+sys.path.append(os.path.join(os.path.dirname(sys.path[0]), 'modules'))
+from RiotClient import RiotClient
 
 app = Flask(__name__)
 
 rc = RiotClient("https://na1.api.riotgames.com/",os.getenv("RiotGamesKey"))
 summonerID = rc.get_summoner_by_name("ShabobNiqqua")
+
 @app.route("/")
 def home():
     return rc.get_masteries_by_summoner(summonerID)
