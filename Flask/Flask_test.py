@@ -1,16 +1,19 @@
 #pip install flask
+
+#           ***Imports***
 from flask import Flask, redirect, url_for
 import sys
 import os
-
 sys.path.append(os.path.join(os.path.dirname(sys.path[0]), 'modules'))
 from RiotClient import RiotClient
 
+#           ***Initializing***
 app = Flask(__name__)
 
 rc = RiotClient("https://na1.api.riotgames.com/",os.getenv("RiotGamesKey"))
 summonerID = rc.get_summoner_by_name("ShabobNiqqua")
 
+#           ***Processing***
 @app.route("/")
 def home():
     return rc.get_masteries_by_summoner(summonerID)
