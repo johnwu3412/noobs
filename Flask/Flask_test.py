@@ -11,6 +11,8 @@ app = Flask(__name__)
 rc = RiotClient("https://na1.api.riotgames.com/",os.getenv("RiotGamesKey"))
 summonerID = rc.get_summoner_by_name("ShabobNiqqua")
 
+requests = [""]
+
 @app.route("/")
 def home():
     return rc.get_masteries_by_summoner(summonerID)
@@ -25,3 +27,4 @@ def user(name):
 
 if __name__ == "__main__":
     app.run()
+
